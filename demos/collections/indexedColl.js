@@ -21,3 +21,7 @@ let oneElArray = Array.of(23.24);
 let cats = ['a','a'];
 cats.length = 10;
 console.log(cats);
+
+function findElement(arr, func){
+    return arr[arr.map(func).indexOf(true)];
+}

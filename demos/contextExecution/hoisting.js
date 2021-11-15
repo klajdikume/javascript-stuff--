@@ -11,7 +11,32 @@ function hoist() {
 
 hoist();
 
-console.log(a);
+
+const myFunc = () => {
+    const myFunc_a = 2;
+    return () => console.log("a is ------------" + myFunc_a);
+};
+
+const myFunc_a = 1;
+
+const test = myFunc();
+test();
+
+const object1 = { a: 1, b: 2, c: 3 };
+const object2 = { a: 10, d: 5 };
+
+console.log({ ...object1, d: 4, ...object2, c: 30 });
+
+const foo = [1,2,3];
+const [n] = foo;
+
+let vowel = "abcd";
+
+for(var i = 0; i < vowel.length; i++){
+    console.log(vowel[i])
+}
+
+console.log(n);
 // console.log(b); -> reference error
 
 // ES5

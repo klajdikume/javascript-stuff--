@@ -7,7 +7,7 @@ console.log(typeof person1);
 const person = {
     name: ['Bob', 'Smith'],
     age: 23,
-    bio: function() {
+    bio() {
         console.log(this.name[0])
     },
     greeting: () => {
