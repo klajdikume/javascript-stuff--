@@ -44,7 +44,7 @@ function Teacher(first, last, age, gender, interests) {
     };
     this.age = age;
     this.gender = gender;
-    //...see link in summary above for full definition
+    
 }
 
 let teacher1 = new Teacher('Bob', 'Smith', 32, 'male', ['music', 'skiing']);

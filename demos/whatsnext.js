@@ -1,4 +1,5 @@
 // What's next concepts
+// https://medium.com/@stephenthecurt/33-fundamentals-every-javascript-developer-should-know-13dd720a90d1
 
 // Arrow Function
 // Destructuring Assignment
@@ -35,3 +36,26 @@
 // build development evniroment
 
 // Node, Webpack, Babel, ESLint, npm Scripts
+
+
+// Fundamentals
+// 	- Variables, scope, hoisting
+// 	- DataTypes, Data Structures
+// 	- Type Conversions, Loops, Control FLow, Expressions & Operators, Functions
+// Web APIs
+// 	- DOM
+// 	- Fetch
+// 	- Video and Audio
+// 	- Drawing Graphics
+// Advanced
+// 	- Advanced Scope
+// 	- Closure
+// 	- this
+// 	- Prototype
+// 	- Prototype Inheritance
+// 	- Class
+// 	- Iterators
+// 	- Generators
+// 	- Event Loop
+// 	- Async JS (setTimeout, setInterval, callbacks, Promises, async await)
+// 	- Module system (Import Export, Default and Named Exports, ESM, CJS)
