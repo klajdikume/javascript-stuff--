@@ -10,15 +10,15 @@
 // Event loop
 // Check the main stack if there is any frames to execute ->  if not check callback queue, pops message to main stack for the execution
 
-console.log('Message no.1 : Sync'); // pops to call stack then engine countines
+// console.log('Message no.1 : Sync'); // pops to call stack then engine countines
 
-setTimeout(function() {
+// setTimeout(function() {
     
-    console.log('Message no. 2: setTimeout');
-}, 1); // is a callback func gets pushed to web API until it gets done. then it gets added to the macro task queue
+//    console.log('Message no. 2: setTimeout');
+// }, 1); // is a callback func gets pushed to web API until it gets done. then it gets added to the macro task queue
 
-Promise.resolve('Simple Promise')
-    .then(res => console.log(res)); // proimse added to the call stack since it has a call back it will get added to microtask queue
+// Promise.resolve('Simple Promise')
+//    .then(res => console.log(res)); // proimse added to the call stack since it has a call back it will get added to microtask queue
 
 // promise.then(function(res) {
 //     console.log('Message no 3: 1st Promise')
@@ -27,11 +27,11 @@ Promise.resolve('Simple Promise')
 //     console.log('Message no 3: 2nd Promise');
 // });
 
-console.log('Message no. 5: Sync'); // engine goes to final console and add to the call stack immediately
+// console.log('Message no. 5: Sync'); // engine goes to final console and add to the call stack immediately
 
-setTimeout(function() {
-    console.log('Message no. 6: setTimeout2');
-}, 0);
+// setTimeout(function() {
+//     console.log('Message no. 6: setTimeout2');
+// }, 0);
 
 // checks the microtask queue, it has then chain of the promise
 
@@ -253,10 +253,63 @@ function sortArgs(...args){
 
 // console.log(secondPerson);
 
-const numbers = [1,2,3];
+// const numbers = [1,2,3];
 
-const doubleNumArray = numbers.map((num) => {
-    return num * 2;
-});
+// const doubleNumArray = numbers.map((num) => {
+//     return num * 2;
+// });
 
-console.log(doubleNumArray);
+// console.log(doubleNumArray);
+
+// JS Event Loop more details
+// console.log('\n --------- EVENT LOOP More Details ------------------- \n ')
+// function main() {
+//     console.log('A');
+//     setTimeout(() => {
+//         console.log('B');
+//     });
+
+//     console.log('C');
+// }
+
+// main();
+
+// Deeper Understanding
+
+
+
+
+function main() {
+    console.log('A');
+    setTimeout(
+        function exec() { console.log('B'); }
+    , 0); // 0 sec in Browser API
+
+    runWhileLoopForNSeconds(3); // 3 sec delay
+
+    console.log('C');
+}
+
+
+
+main();
+
+function runWhileLoopForNSeconds(sec) {
+    let start = Date.now(), now = start;
+    while (now - start < (sec * 1000)) {
+        now = Date.now();
+    }
+}
+
+// dangerous code :p
+
+// function a() {
+//     return a();
+// }
+
+// a();
+
+[1,2,3,4].forEach((i) => {
+    console.log(i + ' processing sync');
+    
+})

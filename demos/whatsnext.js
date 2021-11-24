@@ -59,3 +59,30 @@
 // 	- Event Loop
 // 	- Async JS (setTimeout, setInterval, callbacks, Promises, async await)
 // 	- Module system (Import Export, Default and Named Exports, ESM, CJS)
+
+
+
+// js engines 
+// Bitwise operators, type arrays and Array Buffers
+// DOM and Layout Trees
+// Factories and Classes
+// this, call, apply and bind
+// new, Constructor, instanceof and Instances
+// Prototype Inheritance and Prototype Chain
+// Object.create() and Object.assign()
+// map, reduce, filter
+// Pure Functions, Side Effects, State Mutation, Event Propagation
+// Closures
+// High Order Functions
+// Recursion
+// Collection and Generators
+// Promises
+// async / await
+// DS
+// Big O
+// Algorithms
+// Inheritance, Polimorphism, Code Reuse
+// Design Patterns
+// Partial Applications, Currying, Compose and Pipe
+// Clean Code
+// 
