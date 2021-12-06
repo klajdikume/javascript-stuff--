@@ -9,3 +9,9 @@ https://goodtecher.com/leetcode-solutions-explanations/
 https://medium.com/javarevisited/effective-java-by-joshua-bloch-a-must-read-book-for-java-developers-5292197a279e
 
 https://github.com/MoienTajik/AspNetCore-Developer-Roadmap
+
+http://xfido.com/pdf/designing-data-intensive-applications.pdf
+
+https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity
+
+https://www.youtube.com/watch?v=4cWkVbC2bNE

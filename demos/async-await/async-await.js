@@ -7,3 +7,13 @@ const verifyUser = async function(username, password) {
         console.log(e);
     }
 }
+
+
+function invertTree(node){
+    let left = node.left;
+    let right = node.right;
+    node.right = left;
+    node.left = right;
+    invertTree(left);
+    invertTree(right);
+}
