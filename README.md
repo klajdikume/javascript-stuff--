@@ -15,3 +15,15 @@ http://xfido.com/pdf/designing-data-intensive-applications.pdf
 https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity
 
 https://www.youtube.com/watch?v=4cWkVbC2bNE
+
+
+https://medium.com/design-microservices-architecture-with-patterns/monolithic-to-microservices-architecture-with-patterns-best-practices-a768272797b2
+
+
+handle large amount of request
+design system for
+-> high availability
+-> high scalability
+-> low latency
+-> resilience te network failures on microservices distributed architectures.
+

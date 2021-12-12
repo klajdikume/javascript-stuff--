@@ -1,6 +1,10 @@
 // handles async or blocking code API calls, DB calls, IO calls
 // eventual completon or failure of an async operation and its resulting value
 
+const log = console.log.bind(this);
+
+log("bababab");
+
 // var keepHisWord;
 // keepHisWord = true;
 
