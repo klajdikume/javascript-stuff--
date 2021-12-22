@@ -44,7 +44,7 @@ console.log('-------------END----------------'); // 7 this line jumps to call st
 
 response(); // 2 call response
 
-console.log('------------------ END SECOND RESPONSE CALL --------------------')
+console.log('------------------ END SECOND RESPONSE CALL --------------------');
 
 /*
     - stack
