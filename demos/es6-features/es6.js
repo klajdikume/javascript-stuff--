@@ -121,3 +121,132 @@ const sumArray = (array, target) => {
 }
 
 console.log(sumArray([1,3,4,5], 6));
+
+const foo = ['one', 'two'];
+
+const [ one ] = foo;
+
+console.log(one);
+
+function sum(x, y, z) {
+    return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+
+console.log(sum.apply(null, numbers));
+
+// Arrow function with this
+
+var person = {
+    first: "Alex",
+    actions: ["bike", "hike", "ski", "surf"],
+    printActions: function() {
+        var _this = this;
+        this.actions.forEach((action) => {
+            var str = _this.first + " likes to " + action;
+            console.log(str);
+        });
+    }
+};
+
+person.printActions();
+
+// Destructing Assignment
+var phone = {
+    title: "iPhone",
+    price: 800,
+    description: "The iPhone is a smartphone developed by Apple"
+};
+
+console.log(phone.title);
+
+// ES-6
+var { title, price, description } = {
+    title: "iPhone",
+    price: 800,
+    description: "This iPhone is a smartphone developed by Apple"
+};
+
+console.log(title);
+
+function* generator(num) {
+    yield num + 1;
+    yield num + 1;
+    yield num + 1;
+    yield num + 2;
+}
+
+var gen = generator(10);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+
+function* naturalNumbers() {
+    let num = 1;
+    while(true) {
+        yield num;
+        num = num + 1
+    }
+}
+
+const numberss = naturalNumbers();
+console.log(numberss.next().value);
+console.log(numberss.next().value);
+
+const Person = function(firstName) {
+    this.firstName = firstName;
+    this.sayName1 = function() { console.log(this.firstName); };
+    this.satName2 = () => { console.log(this.firstName); };
+};
+
+const john = new Person('John');
+const dave = new Person('Dave');
+
+john.sayName1();
+// john.sayName2();
+
+//john.sayName1().bind(dave)(); // Dave (this has changed object context);
+// john.sayName2().bind(dave)();
+
+// arrow syntax 
+
+// -> does not have its own this, arguments, super or new.target
+
+const delay = seconds => {
+    return new Promise(
+        resolve => setTimeout(resolve, seconds * 1000)
+    )
+};
+
+const countToFive = async() => {
+    console.log('zero seconds wait');
+    await delay(2);
+    console.log('zero seconds wait');
+    await delay(5);
+    console.log('zero seconds wait');
+}
+
+// countToFive();
+
+const githubRequest = async(loginName) => {
+    try {
+        var response = fetch(`http://api.github.com/users/${loginName}/followers`);
+        var json = await response.json();
+        var followersList = json.map(user => user.login);
+        console.log(followersList);
+    } catch(e) {
+        console.log("Data did not load", e);
+    }
+};
+
+// githubRequest("klajdikume")
+
+console.log(aVar); // undefined
+// console.log(aLet); // causes ReferenceError: aLet is not defined
+var aVar = 1;
+let aLet = 2;
