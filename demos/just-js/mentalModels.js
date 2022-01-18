@@ -274,3 +274,177 @@ let cake = {
 console.log(lie === cake);
 console.log(lie.taste === cake.taste);
 console.log(cake.hasOwnProperty('taste') === lie.hasOwnProperty('taste'));
+
+let spider = {
+    legs: 8
+  };
+  
+  let miles = {
+    __proto__: spider
+  };
+  
+  let gwen1 = {
+    __proto__: spider
+  };
+  
+  miles.legs = 2;
+  spider.legs = gwen1.legs * 2;
+  
+  console.log(gwen1.legs) // ???
+
+  let goose = {location: 'heaven'};
+let cheese = { __proto__: goose };
+// >>> Diagram this moment! <<<
+
+console.log(cheese === goose); // false
+console.log(cheese.location); // "heaven"
+
+goose.location = 'hell';
+console.log(cheese.location); // "hell"
+
+// second iteration
+
+var state = {
+  name: 'cory house',
+  role: 'author'
+}
+
+state.role = 'admin'; // -> Mutating state
+
+// react depends on immutable state for performance reasons
+
+var imObj = Object.assign({}, state, { newProp: 'pro val' });
+
+console.log(imObj);
+
+console.log({ ...state, role: 'abc'})
+
+const user = {
+  name: 'abc',
+  address: {
+    state: 'def'
+  }
+}
+
+const userCopy = { ...user };
+const userCopy1 = { ...user, address: { ...user.address } };
+
+console.log(userCopy);
+console.log(userCopy1);
+
+
+
+// -> second wave :D
+
+
+var twoSum = function(nums, target) {
+  for(var i = 0; i < nums.length; i++) {
+      
+    let currentNumb = nums[i];
+    
+    for(var j = i + 1; j < nums.length; j++){
+        if(currentNumb + nums[j] === target){
+            if(currentNumb != undefined && nums[j] != undefined) {
+              console.log([currentNumb, nums[j]]);
+            }
+            break;
+        }
+    }
+  }
+};
+
+console.log(twoSum([2,7,11,15], 9));
+
+
+// matrics that can be unequally in height and width
+
+// 0 represents land
+// 1 represents part of a river
+
+// river = any number of 1s -> horizontally or vertically adjacent
+
+// sizr of a river = number of 1s
+
+// river can twist (straigh or L or any other adjacent but not diagonally)
+
+// return an array of the sizes of all rivers. Order doesn't matter
+
+
+/*
+  matric = [
+    [1, 0, 0, 1, 0],
+    [1, 0, 1, 0, 0],
+    [0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 1, 0]
+  ]
+
+  // we have 5 rivers with sizes below
+  output: [1, 2, 2, 2, 5]
+*/
+
+/*
+
+let matrix = [
+  [1, 0, 0, 1, 0],
+  [1, 0, 1, 0, 0],
+  [0, 0, 1, 0, 1],
+  [1, 0, 1, 1, 1],
+  [1, 0, 1, 1, 0]
+]
+
+function riverSizes(matrix) {
+  const sizes = [];
+  const visited = matrix.map(row => row.map(value => false)); // 1s visited
+
+  for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[i].length; j++){
+      if (visited[i][j]) continue;
+      
+      traverseNode(i, j, matrix, visited, sizes);
+    }
+  }
+
+  return sizes;
+}
+
+function traverseNode(i, j, matrix, visited, sizes) {
+  let currentRiverSize = 0; // ??
+
+  const nodesToExplore = [[i, j]];
+
+  while (nodesToExplore.length) {
+    const currentNode = nodesToExplore.pop();
+    i = currentNode[0];
+    j = currentNode[1];
+    if(visited[i][j]) continue;
+      visited[i][j] = true;
+    if (matrix[i][j] === 0) continue;
+    currentRiverSize++;
+
+    const unvisitedNeighbors = getUnvisitedNeighbors(i, j, matrix, visited);
+    for(const neighbor of unvisitedNeighbors){
+      nodesToExplore.push(neighbor);
+    }
+  }
+
+  if (currentRiverSize > 0) sizes.push(currentRiverSize);
+}
+
+function getUnvisitedNeighbors(i, j, matrix, visited) {
+  const unvisitedNeighbors = [];
+  if (i > 0 && !visited[i - 1]) unvisitedNeighbors.push([i - 1, j]);
+  if (i < matrix.length - 1 && !visited[i + 1][j]) unvisitedNeighbors.push([i + 1, j]);
+  if (j > 0 && !visited[i][j - 1]) unvisitedNeighbors.push([i, j - 1]);
+  if (j < matrix[0].length - 1 && !visited[i][j + 1]) unvisitedNeighbors.push([i, j + 1]);
+
+  return unvisitedNeighbors;
+}
+
+var sizesOfAllRivers = riverSizes(matrix);
+
+console.log(sizesOfAllRivers);
+
+*/
+// every time alg sees a 1 -> start for searching other 1s near it with DFS or BFS and set new 1s with a flag and number those flags in the end :D 
+
