@@ -129,3 +129,27 @@ var module = (function() {
     }
 
 })();
+
+function makeFunc(){
+    var name = 'Mozilla';
+    function displayName(){
+        console.log(name);
+    }
+    return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+
+// closure -> function and the lexical enviroment within wich that function was declared
+// env -> local vars that were in-scope at the time the closure was created
+
+function makeAdder(x) {
+    return function(y){
+        return x + y;
+    }
+}
+
+var add5 = makeAdder(5);
+
+console.log(add5(2)); // 7

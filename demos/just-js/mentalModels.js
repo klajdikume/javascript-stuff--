@@ -428,7 +428,7 @@ function traverseNode(i, j, matrix, visited, sizes) {
     }
   }
 
-  if (currentRiverSize > 0) sizes.push(currentRiverSize);
+  if (currentRiverSize > 0) sizes.push(currentRiverSize);7
 }
 
 function getUnvisitedNeighbors(i, j, matrix, visited) {

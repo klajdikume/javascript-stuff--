@@ -10,15 +10,6 @@
     box-sizing: border-box;
 }
 
-body {
-    display: grid;
-    min-height: 100vh;
-    place-items: center;
-    line-height: 1.6;
-    background: var(--clr-netrual-900);
-    font-family: sans-serif;
-}
-
 .card {
     color: var(--clr-neutral-100);
     background-image: url(img/card-bg.jpg);
@@ -27,14 +18,12 @@ body {
     max-width: 35ch;
     border-radius: 0.5rem;
     overflow: hidden;
-    transform: scaleX(0);
+
     transform-origin: lefts;
     transition: transform 500ms ease;
 }
 
-.card:hover .card-title::after{
-    transform: scaleX(1);
-}
+
 
 .card-content {
     --padding: 1.5rem;

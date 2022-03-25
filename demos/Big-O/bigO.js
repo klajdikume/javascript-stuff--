@@ -12,7 +12,6 @@ const findIndex = (items, match) => {
     for (let i = 0, total = items.length; i < total; i++) {
         if (items[i] == match)
             return i;
-        
     }
     return -1;
 };
@@ -224,3 +223,201 @@ if (!found) {
     
 */
 
+// two pointers technique
+
+function isPaiSum(A, N, X) {
+    
+    var firstPointer = 0;
+
+    var secondPointer = N - 1;
+
+    while(firstPointer < secondPointer) {
+
+        // if we find a pair
+        if (A[firstPointer] + A[secondPointer] == X)
+            return true;
+        
+        // If sum of elements at current
+        // pointers is less, we move towards
+        // higher values by doing i++
+        else if (A[firstPointer] + A[secondPointer] < X) {
+            i++;
+        }
+
+        else
+            j--;
+    }
+
+    return false;
+}
+
+console.log(' - Binary Gap - ');
+// Binary Gap
+
+function solution1(N) {
+    const asBinary = (N >>> 0).toString(2);
+    console.log({ asBinary });
+    let startingBound = 0;
+    let distances = [];
+
+    for(let i = 0; i < asBinary.length; i++){
+        if(asBinary[i] === '1'){
+            startingBound = i;
+        } else if (asBinary[i] === '0') {
+            distances.push(i - startingBound);
+        }
+
+        console.log({ startingBound });
+        console.log({ distances });
+        
+    }
+
+    if (distances.length === 0) {
+        return 0;
+    }
+
+    const longest = distances.sort((a, b) => b - a);
+    console.log({ longest });
+    return longest[0];
+}
+
+console.log(' - POINTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS - ');
+
+
+
+function solution2(A, B, C, D) {
+    // write your code in JavaScript (Node.js 8.9.4
+    
+    // find highest absolute values pairs of difference between two points
+    // as x and as y
+
+
+    // 3 distances and x1 and x2
+
+    let distancesWithPoints = {
+        d1:  Math.pow(Math.abs(A - B), 2) + Math.pow(Math.abs(C - D), 2),
+        d2:  Math.pow(Math.abs(A - C), 2) + Math.pow(Math.abs(B - D), 2),
+        d3:  Math.pow(Math.abs(A - D), 2) + Math.pow(Math.abs(B - C), 2)
+    }
+    
+    // iterate over properties
+
+  
+    var max = Math.max(distancesWithPoints.d1, distancesWithPoints.d2, distancesWithPoints.d3);
+
+
+    return max;
+    // try all posible combination
+}
+
+
+console.log(solution2(1, 1, 2, 3))
+
+function solution3(T){
+    // returns number of visible nodes
+
+    // store value of root
+
+    // traversing the tree find node values higher than the root
+    
+    // and count
+
+    let pointer = T;
+
+    if(T == null)
+        return -1;
+    else if(T.l == null && T.r == null)
+        return 0;
+
+   
+    const path = [];
+    path.push(T.x); // path[0] is the root
+
+    while(T){
+        const index = pointer.indexOf()
+
+        solution(T.l);
+        solution(T.r);
+    }
+
+}
+
+
+function solution(T) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    return traverseTree(-1, -1, T);
+}
+function traverseTree(nVisibleNodes, parentNodeValue, node) {
+  let n = 0;
+  if (node.x > parentNodeValue) nVisibleNodes += 1;
+  if (null !== node.l) n += traverseTree(nVisibleNodes, node.x, node.l);
+  if (null !== node.r) n += traverseTree(nVisibleNodes, node.x, node.r);
+  nVisibleNodes += n;
+  return nVisibleNodes;
+}
+
+
+function solution5(A) {
+    // A = [10, -10, -1, -1, 10]
+        // indexOfNegative = [1, 2 ,3]
+    // return min number of relocation expenses at the end of array//
+    // to avoid dept at the start of the year
+
+    // sum of array is negative
+    // return 0
+    // 
+
+    let indexOfNegative = {}; 
+    indexOfNegative.indexes = [];
+    indexOfNegative.negativeValues = [];
+
+    for (let i = 0; i < A.length; i++){
+        if( A[i] < 0 ) {
+            let indexAndValue = {};
+            let arrayPair = [i, A[i]];
+
+            indexAndValue.pair = A[i];
+            console.log(arrayPair);
+            indexOfNegative.indexes.push(i);
+            indexOfNegative.negativeValues.push(A[i]);
+        }
+    }
+    console.log(indexOfNegative);
+
+    // 
+    let counter = 0;
+
+    for(let i = 0; i < indexOfNegative.indexes.length; i++){
+        // elementi para me ate pas nese eshte negativ duhet bere alokim ne fund
+       
+        let beforeIndexVal = A[indexOfNegative.indexes[i] - 1];
+        if(beforeIndexVal != undefined){
+            if(A[indexOfNegative.indexes[i] - 1] + indexOfNegative.negativeValues[i] < 0){
+                console.log(A[indexOfNegative.indexes[i] - 1] + indexOfNegative.negativeValues[i])
+                console.log(A[indexOfNegative.indexes[i] - 1] )
+                console.log(indexOfNegative.negativeValues[i])
+                counter++;
+            }
+        }
+    }
+
+    return counter;
+}
+
+[[0, -1], [1, -1], [2, -1]]
+
+console.log(solution5([-1,-1, -1,1,1,1]))
+
+// subsequence 
+function isValidSubsequence(array, sequence) {
+    let arrIdx = 0;
+    let seqIdx = 0;
+    while(arrIdx < array.length && seqIdx < sequence.length) {
+        if (array[arrIdx] === sequence[seqIdx]) seqIdx++;
+        arrIdx++;
+    }
+
+    return seqIdx === sequence.length;
+}
+
+console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1]))

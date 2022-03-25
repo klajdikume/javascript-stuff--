@@ -292,7 +292,7 @@ function main() {
 
 
 
-main();
+// main();
 
 function runWhileLoopForNSeconds(sec) {
     let start = Date.now(), now = start;
@@ -313,3 +313,59 @@ function runWhileLoopForNSeconds(sec) {
     console.log(i + ' processing sync');
     
 })
+
+// Event Loop
+
+// -> js one thing at a time
+// -> single-threaded programming language
+// -> one call stack
+
+// the stack records where in the program we are
+
+// Event Loop -> looks at the stack and the task queue.
+// If the stack is empty, it takes the first thing on the queue and 
+// pushesh it ontu the stack, which effectively runs it.
+
+function f() {
+    console.log("foo");
+    setTimeout(g, 0);
+    console.log("baz");
+    h();
+}
+
+function g() {
+    console.log("bar");
+}
+
+function h() {
+    console.log("blix");
+}
+
+// f();
+
+function changeHeaderDefferred() {
+    var header = document.getElementById("header");
+
+    setTimeout(function changeHeader() {
+        header.style.color = "red";
+
+        return false;
+    }, 100);
+
+    return false;
+}
+
+// changeHeaderDefferred();
+
+function getName() {
+    return 'Slim Shady';
+}
+
+function greet() {
+
+    const userName = getName();
+
+    console.log('Hello ' + userName);
+}
+
+greet();

@@ -85,4 +85,90 @@
 // Design Patterns
 // Partial Applications, Currying, Compose and Pipe
 // Clean Code
-// 
+
+// This object
+
+// dynamic object that take its value from the execution context.
+
+const person = {
+    name: `Edwin`,
+    greet: () => {
+        console.log(`Hello ${this.name}`); 
+    }
+}
+
+person.greet();
+
+// set function to global context
+const greet = person.greet;
+greet();
+
+console.log(Object.entries(person));
+
+// Lexical binding (Arrow functions)
+
+// New binding (When creating an instance with the 'new' reserved word)
+
+// Explicit binding (Indirect invocation)
+
+// Implicit binding (Method invocation)
+
+// Default binding (Direct invocation)
+
+// async iterator
+function asyncIterator() {
+    const array = [1, 2];
+
+    return {
+        next: function() {
+            if (array.length) {
+                return Promise.resolve({
+                    value: array.shift(),
+                    done: false
+                });
+            } else {
+                return Promise.resolve({
+                    done: true
+                });
+            }
+        }
+    }
+}
+
+var iterator = asyncIterator();
+
+(async function() {
+    await iterator.next().then(console.log);
+    await iterator.next().then(console.log);
+    await iterator.next().then(console.log);
+    await iterator.next().then(console.log);
+})();
+
+// js the hard parts
+
+// js principles, callbacks & HOC, Closure, Classes/ Prototypes & Asynchronicity
+
+// closures 
+// function with 
+
+function createFunction() {
+    function multiplyBy2(num) {
+        return num * 2;
+    }
+    return multiplyBy2;
+}
+
+const generatedFunc = createFunction();
+const result = generatedFunc(3);
+
+// nested function scope
+
+function outer(){
+    let counter = 0;
+    function incrementCounter() {
+        counter ++;
+    }
+    incrementCounter();
+}
+
+outer();

@@ -104,4 +104,4 @@ const y = class {}
  console.log(fish.protein);
  console.log(Object.getPrototypeOf(fish));
 
- // js delegation -> looking for nonexistent properties to another object
+// js delegation -> looking for nonexistent properties to another object
