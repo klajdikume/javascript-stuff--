@@ -366,7 +366,7 @@ function solution5(A) {
     // sum of array is negative
     // return 0
     // 
-
+ 
     let indexOfNegative = {}; 
     indexOfNegative.indexes = [];
     indexOfNegative.negativeValues = [];
@@ -421,3 +421,103 @@ function isValidSubsequence(array, sequence) {
 }
 
 console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1]))
+
+
+function fibonacci(n){
+    
+    let term1 = 0;
+    let term2 = 1;
+    let nextTerm;
+    let i = 0;
+    while(i <= n) {
+        
+        nextTerm = term1 + term2;
+        console.log(term1);
+
+        term1 = term2;
+        term2 = nextTerm;
+        
+        i++;
+    }
+}
+
+fibonacci(4)
+
+function squareN(n) {
+    console.log('square');
+    if (n === 0)
+        return 1;
+    if (n === 1)
+        return n;
+    return n + squareN(n - 1);
+}
+
+console.log(squareN(10));
+
+
+function subArrayOrderedNjPasNj(A){
+    let subArrayLongest = [];
+    let subArray = [];
+    for(let i = 0; i < A.length; i++){
+        
+        if( A[i + 1] > A[i] && A[i + 1] != undefined){
+            subArray.push(A[i]);
+            
+            console.log("subArray - " + subArray);
+        } else {
+            subArray.push(A[i]); // push the last sub element
+            if(subArrayLongest.length < subArray.length){
+                subArrayLongest = subArray;
+            }
+            subArray = [];
+        }
+       
+       console.log(subArrayLongest)
+    }
+    return subArrayLongest.length;
+}
+
+function subArrayOrdered(A){
+    let setOfSubsLengths = [];
+    let subArray = [];
+    for(let i = 0; i < A.length; i++){
+        subArray.push(A[i]);
+        let currentElement = A[i];
+        for (let j = i + 1; j < A.length; j++) {
+            if(currentElement <= A[j]){
+                subArray.push(A[j]);
+                currentElement = A[j];
+            }
+        }
+
+        console.log(subArray);
+        console.log(setOfSubsLengths);
+        if(subArray.length === 9){
+            console.log('e nenta - ---------------------------' + subArray);
+        }
+
+        setOfSubsLengths.push(subArray.length);
+        subArray = [];
+    }
+   
+    return Math.max(...setOfSubsLengths);
+}
+
+// find min of array after current element that is bigger than it
+// and push to subArray
+
+function subArrayOrderedMinOption(A){
+    let setOfSubsLengths = [];
+    let subArray = [];
+    for(let i = 0; i < A.length; i++){
+        let slicedArray = A.slice(i);
+
+        let minElementHigherThanCurrent =  slicedArray 
+        console.log(minElement);
+    }
+   
+    return 1;
+}
+
+console.log('returned - ' + subArrayOrderedMinOption([ 69, 54, 19, 51, 16, 54, 64, 89, 72, 40, 31, 43, 1, 11, 82, 65, 75, 67, 25, 98, 31, 77, 55, 88, 85, 76, 35, 101, 44, 74, 29, 94, 72, 39, 20, 24, 23, 66, 16, 95, 5, 17, 54, 89, 93, 10, 7, 88, 68, 10, 11, 22, 25, 50, 18, 59, 79, 87, 7, 49, 26, 96, 27, 19, 67, 35, 50, 10, 6, 48, 38, 28, 66, 94, 60, 27, 76, 4, 43, 66, 14, 8, 78, 72, 21, 56, 34, 90, 89 ]
+    ));
