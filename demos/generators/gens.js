@@ -36,3 +36,18 @@ const values = [...generatorFunc()];
 
 console.log(values); // takes only yeild expressions
 
+function *generatorFunction(){
+    console.log(`Generator function is running`);
+
+    let x = 5;
+    yield x;
+
+    x++;
+    return x;
+}
+
+let iterator1 = generatorFunction();
+
+console.log(iterator1.next());
+console.log(iterator1.next());
+console.log(`All done`);

@@ -48,3 +48,24 @@ function Teacher(first, last, age, gender, interests) {
 }
 
 let teacher1 = new Teacher('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+
+// Arrays
+
+// literal
+// new Array()
+// ...                                                     
+// Array.of(), Array.from();
+
+let letters = [..."Hello World"];
+
+console.log(letters);
+
+// Iterator methods loop over the elements of an array, 
+// Stack and queue methods adda and remove array elements to and from the beginning and the end of an array
+// Subarray methods are for extracting, deleting, inserting, filling, and copying contiguous regions of a larger array
+// Searching and sorting methods are for locating elements within an array and for sorting the elements of an array.
+
+// Array iterator Methods
+
+//  

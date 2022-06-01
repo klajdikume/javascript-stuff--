@@ -156,8 +156,17 @@ async function run() {
     console.log('hwre');
 }
 
-run();
-console.log('hwre');
+// run();
+// console.log('hwre');
 
 
 // 
+
+var text = "Outside";
+
+function logText(){
+    console.log(text);
+    var text = "Inside";
+}
+console.log(text);
+logText();
