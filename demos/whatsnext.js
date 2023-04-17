@@ -172,3 +172,27 @@ function outer(){
 }
 
 outer();
+
+const obj = { foo: 1, baz: { bar: 100 } };
+
+const obj1 = JSON.parse(JSON.stringify(obj));
+
+obj1.baz.bar = 200;
+
+console.log(obj.baz.bar);
+
+async function timer() {
+    let result;
+    setTimeout(() => { result = 100 }, 500);
+    console.log(`result: ${ result }`);
+    return result
+}
+
+// timer();
+
+console.log(`The result is: ${ await timer() }`);
+
+// inside a f
+// a new Lexical Enviroment is created to store local vars and parameters 
+
+ 

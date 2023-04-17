@@ -25,7 +25,7 @@ function sayMyName(firstName, middleName, lastName) {
             return Math.floor(Math.random() * (max - min) + min);
         }
 
-        return "Your" + " " + praiseList[getRandomInt()] + " name is " + firstName + " " + middleName + " " + lastName;
+        return "Your " + praiseList[getRandomInt()] + " name is " + firstName + " " + middleName + " " + lastName;
     }
 
     return combineName();
